@@ -6,4 +6,4 @@ The solar system demonstration aims to calculate and demonstrate the motion and 
 
 ![My Image](Image/Demonstration.jpg)
 
-![My Image](Image/Arduino Diagram.jpg)
+![My Image](Image/Arduino_Diagram.jpg)
