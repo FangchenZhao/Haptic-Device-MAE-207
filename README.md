@@ -4,6 +4,6 @@ To facilitate the understanding and experience of celestial rotation for student
 
 The solar system demonstration aims to calculate and demonstrate the motion and interaction between the planets and the Sun by inputting data from the Sun and different planets. The main principle of this demonstration is to use a vertical rotating rod as a frame, which includes an arm attached to its upper part. By manipulating the tip of the arm close to or away from the center of the rod, the position of the planets can be simulated according to their orbit around the Sun.
 
-![Image](Demonstration.jpg)
+![My Image](Image/Demonstration.jpg)
 
-![Image](Arduino Diagram.jpg)
+![My Image](Image/Arduino Diagram.jpg)
