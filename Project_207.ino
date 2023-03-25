@@ -17,7 +17,7 @@ Servo myservo;  // create servo object to control a servo
 #define servo_pin A0  // speed output pin for servo
 
 int updatedMR = 0;     // keeps track of the latest updated value of the MR sensor reading
-double MR_Offset = 980; //Offset of MR sensor
+double MR_Offset = 1390; //Loop offset of MR sensor
 double B_angle = 0; //angle of bottom in space y-direction
 double T_angle = 0; //angle of top in body x-direction
 
@@ -102,12 +102,22 @@ void loop() {
 // --------------------------------------------------------------
 // Angular position of the top system (Magnetoresistive (MR) Sensors)
 // --------------------------------------------------------------
- if (analogRead(sensorPosPin)<400){
-    updatedMR = analogRead(sensorPosPin);
- }
-  else {
-    updatedMR = analogRead(sensorPosPin)-MR_Offset;
+  int loop_a = 0; //servo ratation loop (CCW face down)
+  int off = analogRead(sensorPosPin)+1018.5;
+  if(off > 0){
+    loop_a = 1;
+    while(off > 0){
+      off = off - MR_Offset;
+      loop_a = loop_a + 1;
+    }
   }
+  else if(off < 0){
+    while(off < 0){
+      off = off + MR_Offset;
+      loop_a = loop_a + 1;
+    }
+  }
+  updatedMR = analogRead(sensorPosPin)+MR_Offset*loop_a;
 //  Serial.print(updatedMR);
  T_angle = -0.259*updatedMR+96.2; // Compute the angle of the servo in degrees
 //  Serial.print(T_angle);
