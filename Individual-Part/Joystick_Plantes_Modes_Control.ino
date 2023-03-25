@@ -9,7 +9,7 @@ double Plante = 0;
 double Joystick_old = 0;
 
 double G = 6.67428*10^(-20); //km^3 kg^-1 s^-2
-double M_S = 1.98892*10^(30); //kg (mass of sun)
+double M_C = 1.98892*10^(30); //kg (mass of center [sun])
 
 int Plante_Diameter = 0; //km
 int Plante_Weight = 0; //kg
@@ -89,6 +89,6 @@ void loop() {
   }
   }
 
-  Orbital_Velocity = sqrt(G*M_S/Plante_Distance); //km/s
+  Orbital_Velocity = sqrt(G*M_C/Plante_Distance); //km/s
 
 }
