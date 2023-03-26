@@ -259,7 +259,7 @@ if(Joystick_h == 0){
 // -------------------------------------------------------------- 
   Real_angle = asin(Plante_Distance*Model_ratio_d/model_arm_length); //
   Modle_P_weight = 1000*3.1415926*(4/3)*pow((Plante_Diameter/2)*Model_ratio_r/1000,3); //kg
-  weight_effect_speed = 1000*Modle_P_weight; //
+  weight_effect_speed = 10000*Modle_P_weight; //
 
   if(T_angle > Real_angle+angle_tolerance){
     S_speed = 75 - weight_effect_speed;
