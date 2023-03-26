@@ -43,7 +43,6 @@ volatile int posi = 0;
 long prevT = 0;
 float eprev = 0;
 float eintegral = 0;
-double dir = 1;
 int pos_old = 0;
 
 // Calculation Variables
@@ -295,7 +294,13 @@ if(Joystick_h == 0){
   if( pwr > 255 ){
     pwr = 255;
   }
-
+  
+  // motor direction
+  int dir = 1;
+  if(u<0){
+    dir = -1;
+  }
+  
   setMotor(dir,pwr,PWM,IN1,IN2);
   eprev = e;
   pos_old = pos;  
