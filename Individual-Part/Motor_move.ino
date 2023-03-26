@@ -10,7 +10,6 @@ volatile int posi = 0;
 long prevT = 0;
 float eprev = 0;
 float eintegral = 0;
-int dir = 1;
 int pos = 0; 
 int target = 0;
 int pos_old = 0;
@@ -55,6 +54,12 @@ void loop() {
     pwr = 255;
   }
 
+  // motor direction
+  int dir = 1;
+  if(u<0){
+    dir = -1;
+  }
+  
   setMotor(dir,pwr,PWM,IN1,IN2);
   eprev = e;
   pos_old = pos;
