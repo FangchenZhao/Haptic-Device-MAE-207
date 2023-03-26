@@ -294,6 +294,9 @@ if(Joystick_h == 0){
   if( pwr > 255 ){
     pwr = 255;
   }
+  if( pwr <0 ){
+    pwr = 0;
+  }
   
   // motor direction
   int dir = 1;
